@@ -1,0 +1,31 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"  tools:context=".activities.TagViewActivity">
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/editText"
+        android:layout_alignRight="@+id/tags_laoyut"
+        android:layout_alignEnd="@+id/tags_laoyut"
+        android:layout_alignLeft="@+id/tags_laoyut"
+        android:layout_alignStart="@+id/tags_laoyut" />
+
+    <ScrollView
+        android:id="@+id/tags_laoyut"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="6dp"
+        android:background="@android:color/white"
+        android:visibility="visible"
+        android:layout_below="@+id/editText">
+
+        <widget.Tags.TagView
+            android:id="@+id/tag_group"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp" />
+
+    </ScrollView>
+
+</RelativeLayout>
