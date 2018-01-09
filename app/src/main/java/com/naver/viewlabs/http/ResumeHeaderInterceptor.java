@@ -14,6 +14,7 @@ public class ResumeHeaderInterceptor implements Interceptor {
 
     private long mResumeBytes;
 
+
     public ResumeHeaderInterceptor(long resumeBytes) {
         mResumeBytes = resumeBytes;
     }
