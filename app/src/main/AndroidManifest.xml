@@ -6,17 +6,21 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
+        android:name=".ViewLabApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:name=".ViewLabApplication"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity" />
+        <activity
+            android:name=".activities.ParallaxActivity"
+            android:configChanges="orientation|screenSize|screenLayout">
+
+        </activity>
         <activity
             android:name=".activities.CoordinatorActivity1"
-            android:theme="@style/Theme.AppCompat.NoActionBar" />
+            android:theme="@style/Theme.AppCompat.NoActionBar"></activity>
         <activity
             android:name=".activities.TagViewActivity"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
@@ -25,32 +29,40 @@
             android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity
             android:name=".activities.FacebookAdsActivity"
-            android:theme="@style/Theme.AppCompat.NoActionBar"></activity>
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity
             android:name=".activities.DiagonalBannerActivity"
             android:label="@string/title_activity_diagonal_banner"
-            android:theme="@style/AppTheme.NoActionBar">
-        </activity>
-        <activity android:name=".activities.SnapActivity">
-        </activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".activities.SnapActivity" />
 
-        <activity android:name=".activities.SnapActivity2"
+        <activity
+            android:name=".activities.SnapActivity2"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
 
-        <activity android:name=".activities.NestedActivity"
+        <activity
+            android:name=".activities.NestedActivity"
             android:theme="@style/Theme.AppCompat.NoActionBar">
 
         </activity>
         <activity android:name=".activities.ServiceTestActivity">
+
+        </activity>
+        <activity android:name=".activities.ServiceTest2Activity" />
+        <activity
+            android:name=".activities.ZoomOutActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar">
+
             <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activities.ServiceTest2Activity" />
 
         <service android:name=".services.DownloadService" />
+        <service android:name=".services.MyIntentService" />
     </application>
 
 </manifest>

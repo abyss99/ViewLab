@@ -1,37 +1,34 @@
 package com.naver.viewlabs;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
-import android.view.View;
+import android.widget.TextView;
 
-import com.naver.viewlabs.activities.CoordinatorActivity1;
+import widget.ndivide.NdivideView;
 
 /**
  * Created by abyss on 2017. 8. 16..
  */
 
 public class MainActivity extends AppCompatActivity {
+    NdivideView ndivideView;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_activity);
+        ndivideView = findViewById(R.id.ndivide);
+        addTextView();
     }
 
-    public void onClickStartActivity(View view) {
-        Intent intent;
-        switch (view.getId()) {
-            case R.id.coordinator_sample1:
-                intent = new Intent(this, CoordinatorActivity1.class);
-                break;
-            default:
-                intent = null;
-        }
-
-
-        if (intent != null) {
-            startActivity(intent);
+    private void addTextView() {
+        for (int i = 0; i < 10; i++) {
+            TextView item = (TextView) getLayoutInflater().inflate(R.layout.ndivide_item, null);
+            item.setText("NDIVIDE : " + i);
+            ndivideView.addView(item);
         }
     }
+
+
 }
